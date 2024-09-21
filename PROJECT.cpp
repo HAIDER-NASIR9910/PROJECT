@@ -322,6 +322,7 @@ int main()
 	else {
 		cout<<"enter the number a again"<<endl;
 	}
+	break;
 	   }
 	   while(true);
 
