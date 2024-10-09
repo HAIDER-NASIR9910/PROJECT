@@ -1,17 +1,18 @@
 #include <iostream>
 using namespace std;
+void getname(const string &name, int index=0)
+{
+	if( name='\0')
+	{
+		
+	}
+}
+{
+	
+}
 int main()
 {
-    int sum=0;
-	for(int i=0;i<10;i++)
-	{
-			int a;
-			cout<<"ENTER THE VOTING PRESS ONE"<<endl;
-			cin>>a;
-	int *ptr = &a;
-	cout<<*ptr<<endl;
-	sum+=*ptr;
-	}
-	cout<<sum<<endl;
-	
+	string name;
+	cout<<"ENTER THE NAME"<<endl;
+	getline(cin,name);
 }

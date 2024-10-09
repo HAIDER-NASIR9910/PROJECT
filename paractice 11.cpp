@@ -5,7 +5,7 @@ struct student{
 	int id;
 	float cgpa;
 };
-void print(student arr[])
+void print(student arr[10])
 {
 	for(int i=0; i<10; i++)
 	{
@@ -34,18 +34,7 @@ void heighest(student arr[10])
 }
 int main()
 {
-	student arr[10];
-	for(int i=0; i<10; i++)
-	{
-		cout<<"ENTER THE FIRST DATA"<<" : "<< i <<endl;
-		cout<<"ENTER YOUR NAME"<<endl;
-		cin.ignore();
-		getline(cin,arr[i].name);
-		cout<<"ENTER THE CGPA"<<endl;
-		cin>>arr[i].cgpa;
-		cout<<"ENTER THE ID"<<endl;
-		cin>>arr[i].id;
-	}
+	student arr[10]={{"HAIDER",1,3.91},{"ATTA",2,3.5},{"ABDULLAH",3,3.4},{"TARIQ",4,3.6},{"RUAF",5,3.2},{"SIBGHAT",6,3.8},{"SARFARAZ",7,3.3},{"ABDUL",8,3.2},{"TALHA",9,3.3},{"UMER",10,2.5}};
 	print(arr);
 	heighest(arr);
 	return 0;

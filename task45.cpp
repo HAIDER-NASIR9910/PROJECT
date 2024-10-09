@@ -19,7 +19,7 @@ void print(student arr[])
 void heighest(student arr[10])
 {
 	int n=0;
-	float max=arr[0].cgpa;
+	float max=0;
 	for(int i=0; i<10; i++)
 	{
 		if(arr[i].cgpa>max)
