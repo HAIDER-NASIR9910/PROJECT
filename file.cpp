@@ -1,22 +1,22 @@
 #include <iostream>
 using namespace std;
-class test{
-	private:
-	int num;
-	public:
-    void getdata (int n)
-    {
-    	num=n;
-	}
-	friend void displaydata(test t1);
-};
-void displaydata(test t1)
+void char_foarm(string nam, int index=0)
 {
-	cout<<"YOUR NUM IS"<<" : "<<t1.num;
+	if(nam[index]='\0')
+	{
+		return;
+	}
+	else
+	{
+		cout<<nam[index]<<endl;
+		return char_foarm(nam,index+1);
+	}
+
 }
 int main()
 {
-	test t1;
-	t1.getdata(6);
-	displaydata(t1);
+	string name;
+	cout<<"ENTER THE NAME"<<endl;
+	getline(cin,name);
+	char_foarm(name);
 }
