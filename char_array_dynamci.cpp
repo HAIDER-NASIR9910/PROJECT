@@ -3,17 +3,17 @@ using namespace std;
 
 int main()
 {
-	int arr[3]={1,2,3};
-	int *ptr=new int[3];
-	for(int i=0;i<3;i++)
+	char arr[20]="HAIDER NASIR";
+	char *ptr=new char[20];
+	for(int i=0; i<20;i++)
 	{
 		ptr[i]=arr[i];
 	}
-	for(int i=0;i<3;i++)
+	for(int i=0;i<20;i++)
 	{
 		cout<<ptr[i]<<endl;
 	}
-	delete[] ptr; 
+	
 
     return 0;
 }

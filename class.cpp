@@ -1,36 +1,31 @@
 #include <iostream>
 using namespace std;
-class rect{
-	private:
-	int length;
-	int width;
-	public:
-	rect (int l, int w)
-	{
-		length=l;
-		width=w;
-	}
-	int getlength(int l)
-	{
-		length=l;
-		return length;
-	}
-	int getwidth(int w)
-	{
-		width=w;
-		return width;
-	}
-	void print()
-	{
-		cout<<"YOUR AREA IS"<<" : "<<endl;
-		cout<<length*width<<endl;
-	}
-	
+class Database
+{
+  private:
+      static Database *DB;
+      
+       //private constructor
+       Database() {  }
+  public:
+     //static method
+     static Database *getDB()
+     { 
+         if (DB == NULL) 
+            DB = new Database();
+     
+         return DB;
+     }
+
 };
+Database* Database::DB=NULL;
+
 int main()
 {
-	rect  r1(1,2);
-	r1.print();
+	Database *db = Database::getDB();
+ //db.getDB();
+//db->someMethod();
+
 
     return 0;
 }
