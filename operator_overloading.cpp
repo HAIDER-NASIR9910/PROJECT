@@ -30,6 +30,13 @@ test operator +(test t1,test t2)
 	t3.num2=t1.getnum2()+t2.getnum2();
 	return t3;
 }
+test operator -(test t1,test t2)
+{
+	test t3;
+	t3.num1=t1.getnum1()-t2.getnum1();
+	t3.num2=t1.getnum2()-t2.getnum2();
+	return t3;
+}
 
 int main()
 {
@@ -39,6 +46,8 @@ int main()
 	t2.setdata(3,2);
 	test sum=t1+t2;
 	sum.print();
+	test sum2=t1-t2;
+	sum2.print();
     return 0;
 }
 

@@ -1,26 +1,71 @@
 #include <iostream>
 using namespace std;
-class person
-{
-	private:
-	string name;
-	string rejno;
-	public:
-	void getdata(string n, string r)
-	{
-		name=n;
-		rejno=r;
-	}
-	friend void display(person);
+struct node{
+	int data;
+	node *prev;
+	node *next;
 };
-	void display(person p1)
+node *head=NULL;
+void insert(int n)
+{
+	node *newnode=new node;
+	newnode->data=n;
+	newnode->next=head;
+	newnode->prev=NULL;
+	if(head!=NULL)
 	{
-		cout<<"YOUR NAME IS"<<" : "<<p1.name<<endl;
-		cout<<"YOUR REJ# IS"<<" : "<<p1.rejno<<endl;
+		head->prev=newnode;
 	}
+	head=newnode;
+}
+
+void print()
+{
+	node *temp=head;
+	while(temp!=NULL)
+	{
+		cout<<temp->data<<" "<<endl;
+		temp=temp->next;
+	}
+}
+
+void insertatend(int n)
+{
+	node *newnode=new node;
+	newnode->data=n;
+	if(head==NULL)
+	{
+		head=newnode;
+	}
+	else
+	{
+		node *temp=head;
+		while(temp!=NULL)
+		{
+			temp=temp->next;
+		}
+		temp->next=head;
+		newnode->prev=temp;
+	}
+}
+void display()
+{
+	node *temp=head;
+	while(temp!=NULL)
+	{
+		cout<<"ELEMENTS ARE"<<" : "<<temp->data<<endl;
+		temp=temp->next;
+	}
+}
+
 int main()
 {
-	person p1;
-	p1.getdata("haider","b24s0308ai088");
-	display(p1);
+	insert(1);
+	insert(2);
+	insertatend(3);
+	display();
+
+
+    return 0;
 }
+
